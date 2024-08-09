@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فندر</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: #ffffff;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .header {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .buttons-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .button {
+            width: 350px;
+            height: 120px;
+            background-color: #6200ea;
+            color: #fff;
+            border-radius: 10px;
+            text-align: right;
+            font-size: 1.7em;
+            transition: background-color 0.3s;
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            cursor: pointer; /* Change cursor to pointer for clickable buttons */
+        }
+        .button img {
+            max-height: 140px;
+            margin-left: 5px;
+        }
+        .button span {
+            flex-grow: 1;
+            text-align: right;
+        }
+        .button:hover {
+            background-color: #3700b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">مرحبا بكم في فندر</div>
+    <div class="buttons-container">
+        <div class="button" onclick="window.location.href='tr.html'">
+            <img src="https://cdn-icons-png.flaticon.com/256/11796/11796117.png" alt="تتبع طلبك">
+            <span>تتبع طلبك</span>
+        </div>
+        <div class="button"onclick="window.location.href='cll.html'">
+            <img src="https://cdn-icons-png.flaticon.com/256/7169/7169865.png" alt="حساب السعر">
+            <span>حساب السعر</span>
+        </div>
+        <div class="button"onclick="window.location.href='ali.html'">
+            <img src="https://cdn-icons-png.flaticon.com/256/9446/9446165.png" alt="علي اكسبريس">
+            <span>علي اكسبريس</span>
+        </div>
+        <div class="button"onclick="window.location.href='coin.html'">
+            <img src="https://cdn-icons-png.flaticon.com/256/7152/7152394.png" alt="حساب النقاط">
+            <span>حساب النقاط</span>
+        </div>
+        <div class="button" onclick="window.open('https://www.instagram.com/vndr1q/', '_blank')">
+            <img src="https://cdn-icons-png.flaticon.com/256/10826/10826962.png" alt="أطلب الآن">
+            <span>أطلب الآن</span>
+        </div>
+    </div>
+</body>
+</html>
