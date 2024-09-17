@@ -68,35 +68,71 @@
             background-color: #0056b3;
             transform: translateY(-3px);
         }
+
+        /* تصميم أكثر أناقة لعرض الأيام وحالة الطلب */
         .countdown {
             font-size: 26px;
-            color: #007bff;
+            color: #fff;
             margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
         }
         .countdown .time-box {
-            display: inline-block;
-            padding: 12px 24px;
-            margin: 5px;
-            background: #007bff;
+            padding: 20px 40px;
+            background: linear-gradient(135deg, #007bff, #0056b3);
             color: #fff;
-            border-radius: 12px;
-            font-size: 24px;
+            border-radius: 20px;
+            font-size: 28px;
             text-align: center;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-            transition: background 0.3s;
+            box-shadow: 0 8px 20px rgba(0, 0, 123, 0.3);
+            transition: background 0.3s, transform 0.3s;
+            position: relative;
         }
         .countdown .time-box:hover {
-            background: #0056b3;
+            background: linear-gradient(135deg, #0056b3, #007bff);
+            transform: translateY(-5px);
         }
+        .countdown .time-box::before {
+            content: "";
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            bottom: -10px;
+            left: -10px;
+            border-radius: 20px;
+            background: rgba(0, 123, 255, 0.1);
+            z-index: -1;
+            transition: all 0.3s;
+        }
+        .countdown .time-box:hover::before {
+            background: rgba(0, 123, 255, 0.3);
+        }
+
         .status-message {
             margin-top: 30px;
-            padding: 15px;
+            padding: 20px;
             background: #f8f9fa;
-            border-radius: 10px;
-            font-size: 20px;
+            border-left: 8px solid #007bff;
+            border-radius: 12px;
+            font-size: 22px;
             color: #333;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
         }
+
+        .status-message:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 8px;
+            background: linear-gradient(135deg, #007bff, #0056b3);
+        }
+
     </style>
 </head>
 <body>
@@ -175,19 +211,17 @@
                     statusMessageElement.textContent = "تم الشحن إلى العراق";
                 } else if (days >= 1 && days <= 4) {
                     statusMessageElement.textContent = "تم الاستلام في العراق";
-                } else {
-                    statusMessageElement.textContent = "الطلب في مرحلة غير محددة";
-                }
-
-                if (totalSeconds <= 0) {
-                    daysElement.textContent = 'انتهت المدة';
-                    statusMessageElement.textContent = 'تم تسليم الطلب';
+‏                } else if (days === 0) {
+‏                    statusMessageElement.textContent = "تم توصيل الطلب للعميل";
+‏                } else {
+‏                    statusMessageElement.textContent = "الطلب غير متاح";
                 }
             }
 
-            updateCountdown();
-            setInterval(updateCountdown, 1000);
+            // تشغيل التحديث كل ثانية
+‏            updateCountdown();
+‏            setInterval(updateCountdown, 1000);
         }
-    </script>
-</body>
-</html>
+‏    </script>
+‏</body>
+‏</html> 
